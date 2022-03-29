@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('product');
-});
+Route::get('/', [\App\Http\Controllers\ProductsController::class, 'index'] );
 
 Auth::routes();
 
