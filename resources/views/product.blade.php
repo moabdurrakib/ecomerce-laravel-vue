@@ -1,125 +1,9 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.frontend')
+    @section('styles')
 
-<head>
+    @endsection
 
-    <!--====== Required meta tags ======-->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!--====== Title ======-->
-    <title>Furnish - Furniture and Decor Website Template</title>
-
-    <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
-
-    <!--====== Bootstrap css ======-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-    <!--====== Animate css ======-->
-    <link rel="stylesheet" href="assets/css/animate.css">
-
-    <!--====== Magnific Popup css ======-->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
-    <!--====== Slick css ======-->
-    <link rel="stylesheet" href="assets/css/slick.css">
-
-    <!--====== Line Icons css ======-->
-    <link rel="stylesheet" href="assets/css/LineIcons.css">
-
-    <!--====== Default css ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
-
-    <!--====== Style css ======-->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!--====== Responsive css ======-->
-    <link rel="stylesheet" href="assets/css/responsive.css">
-
-
-</head>
-
-<body>
-
-<!--====== PRELOADER PART START ======-->
-
-<div class="preloader">
-    <div class="spin">
-        <div class="cube1"></div>
-        <div class="cube2"></div>
-    </div>
-</div>
-
-<!--====== PRELOADER PART START ======-->
-
-<!--====== HEADER PART START ======-->
-
-<header class="header-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="assets/images/logo.png" alt="Logo">
-                    </a> <!-- Logo -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="bar-icon"></span>
-                        <span class="bar-icon"></span>
-                        <span class="bar-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul id="nav" class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a data-scroll-nav="0" href="#home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-scroll-nav="0" href="#product">Products</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-scroll-nav="0" href="#service">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-scroll-nav="0" href="#showcase">Portfolio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-scroll-nav="0" href="#team">Team</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-scroll-nav="0" href="#blog">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-scroll-nav="0" href="#contact">Contact</a>
-                            </li>
-                                @if (Route::has('login'))
-                                        @auth
-                                    <li class="nav-item">
-                                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Cart</a>
-                                    </li>
-                                        @else
-                                    <li class="nav-item">
-                                            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-                                    </li>
-                                            @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                        </li>
-                                    @endif
-                                        @endauth
-                                @endif
-
-                        </ul> <!-- navbar nav -->
-                    </div>
-                </nav> <!-- navbar -->
-            </div>
-        </div> <!-- row -->
-    </div> <!-- container -->
-</header>
-
-<!--====== HEADER PART ENDS ======-->
+@section('content')
 
 <!--====== SLIDER PART START ======-->
 
@@ -153,7 +37,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col-lg-4 col-md-5">
                             <div class="slider-product-image d-none d-md-block">
-                                <img src="assets/images/slider/3.jpg" alt="Slider">
+                                <img src=" assets/images/slider/3.jpg" alt="Slider">
                                 <div class="slider-discount-tag">
                                     <p>-20% <br> OFF</p>
                                 </div>
@@ -267,111 +151,34 @@
                     <div class="tab-pane fade show active" id="v-pills-furniture" role="tabpanel" aria-labelledby="v-pills-furniture-tab">
                         <div class="product-items mt-30">
                             <div class="row product-items-active">
+                                @if(isset($products))
+                                    @foreach($products as $product)
                                 <div class="col-md-4">
                                     <div class="single-product-items">
                                         <div class="product-item-image">
-                                            <a href="#"><img src="assets/images/product/p-1.jpg" alt="Product"></a>
+                                            <a href="#"><img src="{{$product->image_name}}" alt="Product" height="250px"></a>
                                             <div class="product-discount-tag">
-                                                <p>-60%</p>
+                                                <p>-$50</p>
                                             </div>
                                         </div>
                                         <div class="product-item-content text-center mt-30">
-                                            <h5 class="product-title"><a href="#">Fibre Chair</a></h5>
+                                            <h5 class="product-title"><a href="#">{{$product->name}}</a></h5>
                                             <ul class="rating">
                                                 <li><i class="lni-star-filled"></i></li>
                                                 <li><i class="lni-star-filled"></i></li>
                                                 <li><i class="lni-star-filled"></i></li>
                                                 <li><i class="lni-star-filled"></i></li>
                                             </ul>
-                                            <span class="regular-price">$49.00</span>
-                                            <span class="discount-price">$69.00</span>
+                                            <span class="regular-price">{{$product->sale_price}}</span>
+                                            <span class="discount-price">{{$product->price}}</span>
                                         </div>
+                                            <add-to-cart-button  product-id="{{$product->id}}"
+                                            user-id="{{auth()->user()->id ?? 0 }}"
+                                            /> <span> hak</span>
                                     </div> <!-- single product items -->
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="single-product-items">
-                                        <div class="product-item-image">
-                                            <a href="#"><img src="assets/images/product/p-2.jpg" alt="Product"></a>
-                                            <div class="product-discount-tag">
-                                                <p>-20%</p>
-                                            </div>
-                                        </div>
-                                        <div class="product-item-content text-center mt-30">
-                                            <h5 class="product-title"><a href="#">Touchwood Chair</a></h5>
-                                            <ul class="rating">
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                            </ul>
-                                            <span class="regular-price">$129.00</span>
-                                            <span class="discount-price">$159.00</span>
-                                        </div>
-                                    </div> <!-- single product items -->
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="single-product-items">
-                                        <div class="product-item-image">
-                                            <a href="#"><img src="assets/images/product/p-3.jpg" alt="Product"></a>
-                                            <div class="product-discount-tag">
-                                                <p>-10%</p>
-                                            </div>
-                                        </div>
-                                        <div class="product-item-content text-center mt-30">
-                                            <h5 class="product-title"><a href="#">Classic Wardrobe</a></h5>
-                                            <ul class="rating">
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star"></i></li>
-                                            </ul>
-                                            <span class="regular-price">$89.00</span>
-                                            <span class="discount-price">$129.00</span>
-                                        </div>
-                                    </div> <!-- single product items -->
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="single-product-items">
-                                        <div class="product-item-image">
-                                            <a href="#"><img src="assets/images/product/p-1.jpg" alt="Product"></a>
-                                            <div class="product-discount-tag">
-                                                <p>-60%</p>
-                                            </div>
-                                        </div>
-                                        <div class="product-item-content text-center mt-30">
-                                            <h5 class="product-title"><a href="#">Touchwood Chair</a></h5>
-                                            <ul class="rating">
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                            </ul>
-                                            <span class="regular-price">$59.00</span>
-                                            <span class="discount-price">$69.00</span>
-                                        </div>
-                                    </div> <!-- single product items -->
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="single-product-items">
-                                        <div class="product-item-image">
-                                            <a href="#"><img src="assets/images/product/p-2.jpg" alt="Product"></a>
-                                            <div class="product-discount-tag">
-                                                <p>-60%</p>
-                                            </div>
-                                        </div>
-                                        <div class="product-item-content text-center mt-30">
-                                            <h5 class="product-title"><a href="#">Touchwood Chair</a></h5>
-                                            <ul class="rating">
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                                <li><i class="lni-star-filled"></i></li>
-                                            </ul>
-                                            <span class="regular-price">$59.00</span>
-                                            <span class="discount-price">$69.00</span>
-                                        </div>
-                                    </div> <!-- single product items -->
-                                </div>
+                            @endforeach
+                            @endif
                             </div> <!-- row -->
                         </div> <!-- product items -->
                     </div> <!-- tab pane -->
@@ -1033,7 +840,7 @@
 <!--====== TESTIMONIAL PART START ======-->
 
 <section id="testimonial" class="testimonial-area pt-200">
-    <div class="testimonial-bg bg_cover" style="background-image: url(assets/images/testimonial/ts-bg.jpg)"></div>
+    <div class="testimonial-bg bg_cover" style="background-image: url(assets/images/testimonial/ts-bg.jpg) "></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-md-8">
@@ -1358,6 +1165,12 @@
 
 <!--====== BACK TO TOP PART ENDS ======-->
 
+@endsection
+
+@section('scripts')
+
+
+@endsection
 
 
 
@@ -1367,30 +1180,3 @@
 
 
 
-<!--====== jquery js ======-->
-<script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-
-<!--====== Bootstrap js ======-->
-<script src="assets/js/bootstrap.min.js"></script>
-
-
-<!--====== Slick js ======-->
-<script src="assets/js/slick.min.js"></script>
-
-<!--====== Magnific Popup js ======-->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-
-
-<!--====== nav js ======-->
-<script src="assets/js/jquery.nav.js"></script>
-
-<!--====== Nice Number js ======-->
-<script src="assets/js/jquery.nice-number.min.js"></script>
-
-<!--====== Main js ======-->
-<script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
