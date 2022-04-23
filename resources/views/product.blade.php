@@ -171,10 +171,9 @@
                                             </ul>
                                             <span class="regular-price">{{$product->sale_price}}</span>
                                             <span class="discount-price">{{$product->price}}</span>
-                                        </div>
                                             <add-to-cart-button  product-id="{{$product->id}}"
-                                            user-id="{{auth()->user()->id ?? 0 }}"
-                                            /> <span> hak</span>
+                                            user-id="{{auth()->id ?? 0 }}" />
+                                        </div>
                                     </div> <!-- single product items -->
                                 </div>
                             @endforeach
@@ -840,7 +839,7 @@
 <!--====== TESTIMONIAL PART START ======-->
 
 <section id="testimonial" class="testimonial-area pt-200">
-    <div class="testimonial-bg bg_cover" style="background-image: url(assets/images/testimonial/ts-bg.jpg) "></div>
+    <div class="testimonial-bg bg_cover" style="background-image: url(assets/images/testimonial/tsbg.jpg) "></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-md-8">

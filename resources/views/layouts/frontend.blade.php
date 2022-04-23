@@ -11,7 +11,9 @@
     <!--====== Title ======-->
     <title>Furnish - Furniture and Decor Website Template</title>
 
-    <script src="{{asset('css/app.css')}}"></script>
+<!--==== Styles ==--->
+
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
 
@@ -39,27 +41,29 @@
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="assets/css/responsive.css">
 
+    @yield('styles')
+
 
 </head>
 
 <body>
 
-
-<!--====== PRELOADER PART START ======-->
-
-<div class="preloader">
-    <div class="spin">
-        <div class="cube1"></div>
-        <div class="cube2"></div>
-    </div>
-</div>
-
-<!--====== PRELOADER PART START ======-->
-
 !--====== HEADER PART START ======-->
 
 <!--====== HEADER PART ENDS ======-->
 <div id="app">
+
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="spin">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART START ======-->
+
     <header class="header-area">
         <div class="container">
             <div class="row">
@@ -100,7 +104,7 @@
                                 @if (Route::has('login'))
                                     @auth
                                         <li class="nav-item">
-                                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Cart</a>
+                                            <a href="{{ url('/cart') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Cart</a>
                                         </li>
                                     @else
                                         <li class="nav-item">
