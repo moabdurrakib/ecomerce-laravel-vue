@@ -32,26 +32,47 @@ class CartsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return array|\Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+
+
         //Getting product details
 
-        $product = Product::find($request->get('product_id'))->first();
+        $product = Product::where('id', $request->get('product_id'))->first();
 
-        //Adding Product in cart
+        $productFoundInCart =Cart::where('product_id',$request->get('product_id'))->pluck('id');
 
-        $cart = Cart::create([
-           'product_id' => $product->id,
-           'quantity' =>1,
-           'price' =>$product->sale_price,
-           'user_id'=>auth()->user()->id
-        ]);
-        if ($cart) {
-            return [ 'message' => 'Cart Updated'];
+
+
+        if ($productFoundInCart->isEmpty()) {
+
+            //Adding Product in cart
+
+            $cart = Cart::create([
+                'product_id' => $product->id,
+                'quantity' => 1,
+                'price' => $product->sale_price,
+                'user_id' => auth()->user()->id,
+            ]);
         }
-        dd($product);
+        else
+        {
+            //Increating Product Quantity.
+            $cart = Cart::where('product_id', $request->get('product_id'))->increment('quantity');
+        }
+
+        //check the user cart item
+
+        $userItems = Cart::where('user_id', auth()->user()->id)->sum('quantity');
+
+        if ($cart) {
+            return [ 'message' => 'Cart Updated',
+                'items' => $userItems
+                ];
+        }
+
     }
 
 

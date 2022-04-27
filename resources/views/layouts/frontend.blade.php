@@ -103,9 +103,7 @@
                                 </li>
                                 @if (Route::has('login'))
                                     @auth
-                                        <li class="nav-item">
-                                            <a href="{{ url('/cart') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Cart</a>
-                                        </li>
+                                     <cart />
                                     @else
                                         <li class="nav-item">
                                             <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>

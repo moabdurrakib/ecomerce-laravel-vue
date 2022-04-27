@@ -172,7 +172,7 @@
                                             <span class="regular-price">{{$product->sale_price}}</span>
                                             <span class="discount-price">{{$product->price}}</span>
                                             <add-to-cart-button  product-id="{{$product->id}}"
-                                            user-id="{{auth()->id ?? 0 }}" />
+                                            user-id="{{auth()->user()->id ?? 0 }}" />
                                         </div>
                                     </div> <!-- single product items -->
                                 </div>
