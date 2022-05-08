@@ -11,6 +11,8 @@
     <!--====== Title ======-->
     <title>Furnish - Furniture and Decor Website Template</title>
 
+    @yield('styles')
+
 <!--==== Styles ==--->
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -68,7 +70,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg">
+                    <nav class="navbar navbar-fixed-top navbar-expand-lg">
                         <a class="navbar-brand" href="index.html">
                             <img src="assets/images/logo.png" alt="Logo">
                         </a> <!-- Logo -->
@@ -154,6 +156,12 @@
 <script src="assets/js/main.js"></script>
 
 @yield('scripts')
+
+<script>
+    window.onbeforeunload = function (){
+        window.scrollTo(0,0);
+    }
+</script>
 
 </body>
 

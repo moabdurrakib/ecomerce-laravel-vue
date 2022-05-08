@@ -18,3 +18,4 @@ Route::get('/', [\App\Http\Controllers\ProductsController::class, 'index'] );
 Auth::routes();
 
 Route::post('/cart', [\App\Http\Controllers\CartsController::class, 'store'])->name('cart');
+Route::get('/checkout', [\App\Http\Controllers\CartsController::class, 'index'])->name('checkout');

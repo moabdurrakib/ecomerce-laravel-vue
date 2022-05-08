@@ -674,7 +674,7 @@
                                 </div>
                             </div> <!-- single services -->
 
-                            <div class="single-services text-center mt-30">
+                            <div class="single-services text-center mt-30 ">
                                 <div class="services-icon">
                                     <i class="lni-ruler-pencil"></i>
                                 </div>
@@ -685,7 +685,7 @@
                             </div> <!-- single services -->
                         </div>
                         <div class="col-md-6 col-sm-8">
-                            <div class="single-services text-center mt-30">
+                            <div class="single-services text-center ">
                                 <div class="services-icon">
                                     <i class="lni-customer"></i>
                                 </div>

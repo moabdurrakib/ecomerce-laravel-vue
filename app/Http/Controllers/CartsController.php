@@ -15,7 +15,7 @@ class CartsController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.checkout');
     }
 
     /**
@@ -36,7 +36,12 @@ class CartsController extends Controller
      */
     public function store(Request $request)
     {
-
+    if(!$request->get('product_id')){
+        return [
+            'message' => 'Cart items returned',
+            'items' => Cart::where('user_id', auth()->user()->id)->sum('quantity')
+        ];
+    }
 
         //Getting product details
 
@@ -65,11 +70,11 @@ class CartsController extends Controller
 
         //check the user cart item
 
-        $userItems = Cart::where('user_id', auth()->user()->id)->sum('quantity');
+
 
         if ($cart) {
             return [ 'message' => 'Cart Updated',
-                'items' => $userItems
+                'items' => Cart::where('user_id', auth()->user()->id)->sum('quantity')
                 ];
         }
 
