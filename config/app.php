@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -193,5 +193,6 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // ...
     ])->toArray(),
+    'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
 
 ];

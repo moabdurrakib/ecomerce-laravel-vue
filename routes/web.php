@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::post('/cart', [\App\Http\Controllers\CartsController::class, 'store'])->name('cart');
 Route::get('/checkout', [\App\Http\Controllers\CartsController::class, 'index'])->name('checkout');
+Route::get('/checkout/get/items', [\App\Http\Controllers\CartsController::class, 'getCartItemsForCheckout']);
+Route::post('/process/user/payment', [\App\Http\Controllers\CartsController::class, 'processPayment']);

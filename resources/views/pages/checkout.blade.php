@@ -57,124 +57,326 @@
          .btn-default:hover { background-color: #063bb3; color: #fff; border: 1px solid #063bb3; }
          .btn-default.focus, .btn-default:focus { background-color: #063bb3; color: #fff; border: 1px solid #063bb3; }
 
-         .checkoutbox{
-             margin-top: 20px;
+         .checkoutBox{
+             margin-top: 60px;
          }
+
+         /*css for address and payment*/
+
+         html,body,.wrapper{
+             background: #f7f7f7;
+         }
+         .steps {
+             margin-top: -41px;
+             display: inline-block;
+             float: right;
+             font-size: 16px
+         }
+         .step {
+             float: left;
+             background: white;
+             padding: 7px 13px;
+             border-radius: 1px;
+             text-align: center;
+             width: 100px;
+             position: relative
+         }
+         .step_line {
+             margin: 0;
+             width: 0;
+             height: 0;
+             border-left: 16px solid #fff;
+             border-top: 16px solid transparent;
+             border-bottom: 16px solid transparent;
+             z-index: 1008;
+             position: absolute;
+             left: 99px;
+             top: 1px
+         }
+         .step_line.backline {
+             border-left: 20px solid #f7f7f7;
+             border-top: 20px solid transparent;
+             border-bottom: 20px solid transparent;
+             z-index: 1006;
+             position: absolute;
+             left: 99px;
+             top: -3px
+         }
+         .step_complete {
+             background: #357ebd
+         }
+         .step_complete a.check-bc, .step_complete a.check-bc:hover,.afix-1,.afix-1:hover{
+             color: #eee;
+         }
+         .step_line.step_complete {
+             background: 0;
+             border-left: 16px solid #357ebd
+         }
+         .step_thankyou {
+             float: left;
+             background: white;
+             padding: 7px 13px;
+             border-radius: 1px;
+             text-align: center;
+             width: 100px;
+         }
+         .step.check_step {
+             margin-left: 5px;
+         }
+         .ch_pp {
+             text-decoration: underline;
+         }
+         .ch_pp.sip {
+             margin-left: 10px;
+         }
+         .check-bc,
+         .check-bc:hover {
+             color: #222;
+         }
+         .SuccessField {
+             border-color: #458845 !important;
+             -webkit-box-shadow: 0 0 7px #9acc9a !important;
+             -moz-box-shadow: 0 0 7px #9acc9a !important;
+             box-shadow: 0 0 7px #9acc9a !important;
+             background: #f9f9f9 url(../images/valid.png) no-repeat 98% center !important
+         }
+
+         .btn-xs{
+             line-height: 28px;
+         }
+
+         /*login form*/
+         .login-container{
+             margin-top:30px ;
+         }
+         .login-container input[type=submit] {
+             width: 100%;
+             display: block;
+             margin-bottom: 10px;
+             position: relative;
+         }
+
+         .login-container input[type=text], input[type=password] {
+             height: 44px;
+             font-size: 16px;
+             width: 100%;
+             margin-bottom: 10px;
+             -webkit-appearance: none;
+             background: #fff;
+             border: 1px solid #d9d9d9;
+             border-top: 1px solid #c0c0c0;
+             /* border-radius: 2px; */
+             padding: 0 8px;
+             box-sizing: border-box;
+             -moz-box-sizing: border-box;
+         }
+
+         .login-container input[type=text]:hover, input[type=password]:hover {
+             border: 1px solid #b9b9b9;
+             border-top: 1px solid #a0a0a0;
+             -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+             -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+             box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+         }
+
+         .login-container-submit {
+             /* border: 1px solid #3079ed; */
+             border: 0px;
+             color: #fff;
+             text-shadow: 0 1px rgba(0,0,0,0.1);
+             background-color: #357ebd;/*#4d90fe;*/
+             padding: 17px 0px;
+             font-family: roboto;
+             font-size: 14px;
+             /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+         }
+
+         .login-container-submit:hover {
+             /* border: 1px solid #2f5bb7; */
+             border: 0px;
+             text-shadow: 0 1px rgba(0,0,0,0.3);
+             background-color: #357ae8;
+             /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+         }
+
+         .login-help{
+             font-size: 12px;
+         }
+
+         .asterix{
+             background:#f9f9f9 url(../images/red_asterisk.png) no-repeat 98% center !important;
+         }
+
+         /* images*/
+         ol, ul {
+             list-style: none;
+         }
+         .hand {
+             cursor: pointer;
+             cursor: pointer;
+         }
+         .cards{
+             padding-left:0;
+         }
+         .cards li {
+             -webkit-transition: all .2s;
+             -moz-transition: all .2s;
+             -ms-transition: all .2s;
+             -o-transition: all .2s;
+             transition: all .2s;
+             background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+             background-position: 0 0;
+             float: left;
+             height: 32px;
+             margin-right: 8px;
+             text-indent: -9999px;
+             width: 51px;
+         }
+         .cards .mastercard {
+             background-position: -51px 0;
+         }
+         .cards li {
+             -webkit-transition: all .2s;
+             -moz-transition: all .2s;
+             -ms-transition: all .2s;
+             -o-transition: all .2s;
+             transition: all .2s;
+             background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+             background-position: 0 0;
+             float: left;
+             height: 32px;
+             margin-right: 8px;
+             text-indent: -9999px;
+             width: 51px;
+         }
+         .cards .amex {
+             background-position: -102px 0;
+         }
+         .cards li {
+             -webkit-transition: all .2s;
+             -moz-transition: all .2s;
+             -ms-transition: all .2s;
+             -o-transition: all .2s;
+             transition: all .2s;
+             background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+             background-position: 0 0;
+             float: left;
+             height: 32px;
+             margin-right: 8px;
+             text-indent: -9999px;
+             width: 51px;
+         }
+         .cards li:last-child {
+             margin-right: 0;
+         }
+         /* images end */
+
+
+
+         /*
+          * BOOTSTRAP
+          */
+         .container{
+             border: none;
+         }
+         .panel-footer{
+             background:#fff;
+         }
+         .btn{
+             border-radius: 1px;
+         }
+         .btn-sm, .btn-group-sm > .btn{
+             border-radius: 1px;
+         }
+         .input-sm, .form-horizontal .form-group-sm .form-control{
+             border-radius: 1px;
+         }
+
+         .panel-info {
+             border-color: #999;
+         }
+
+         .panel-heading {
+             border-top-left-radius: 1px;
+             border-top-right-radius: 1px;
+         }
+         .panel {
+             border-radius: 1px;
+         }
+         .panel-info > .panel-heading {
+             color: #eee;
+             border-color: #999;
+         }
+         .panel-info > .panel-heading {
+             background-image: linear-gradient(to bottom, #555 0px, #888 100%);
+         }
+
+         hr {
+             border-color: #999 -moz-use-text-color -moz-use-text-color;
+         }
+
+         .panel-footer {
+             border-bottom-left-radius: 1px;
+             border-bottom-right-radius: 1px;
+             border-top: 1px solid #999;
+         }
+
+         .btn-link {
+             color: #888;
+         }
+
+         hr{
+             margin-bottom: 10px;
+             margin-top: 10px;
+         }
+
+         /** MEDIA QUERIES **/
+         @media only screen and (max-width: 989px){
+             .span1{
+                 margin-bottom: 15px;
+                 clear:both;
+             }
+         }
+
+         @media only screen and (max-width: 764px){
+             .inverse-1{
+                 float:right;
+             }
+         }
+
+         @media only screen and (max-width: 586px){
+             .cart-titles{
+                 display:none;
+             }
+             .panel {
+                 margin-bottom: 1px;
+             }
+         }
+
+         .form-control {
+             border-radius: 1px;
+         }
+
+         @media only screen and (max-width: 486px){
+             .col-xss-12{
+                 width:100%;
+             }
+             .cart-img-show{
+                 display: none;
+             }
+             .btn-submit-fix{
+                 width:100%;
+             }
+
+         }
+         /*
+         @media only screen and (max-width: 777px){
+             .container{
+                 overflow-x: hidden;
+             }
+         }*/
      </style>
  @endsection
 @section('content')
-    <div class="container checkoutbox">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
-                <div class="box">
-                    <h3 class="box-title">Select Your Hosting Plan</h3>
-                    <div class="plan-selection">
-                        <div class="plan-data">
-                            <input id="question1" name="question" type="radio" class="with-font" value="sel" />
-                            <label for="question1">Personal</label>
-                            <p class="plan-text">
-                                1 install | 25K visits/month | 10 GB local storage</p>
-                            <span class="plan-price">$29 / mo</span>
-                        </div>
-                    </div>
-                    <div class="plan-selection">
-                        <div class="plan-data">
-                            <input id="question2" name="question" type="radio" class="with-font" value="sel" />
-                            <label for="question2">Profesional</label>
-                            <p class="plan-text">
-                                Up to 10 installs | 100K visits/month | 20 GB local storage</p>
-                            <span class="plan-price">$99 / mo</span>
-                        </div>
-                    </div>
-                    <div class="plan-selection">
-                        <div class="plan-data">
-                            <input id="question3" name="question" type="radio" class="with-font" value="sel" />
-                            <label for="question3">Business</label>
-                            <p class="plan-text">Up to 25 installs | 400K visits/month | 30 GB local storage</p>
-                            <span class="plan-price">$249 / mo</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <h3 class="box-title">Select term length</h3>
-                    <div class="plan-selection">
-                        <div class="plan-data">
-                            <input id="question4" name="question" type="radio" class="with-font" value="sel" />
-                            <label for="question4">1 Month</label>
-                            <span class="plan-price term-price">$29 / mo</span>
-                        </div>
-                    </div>
-                    <div class="plan-selection">
-                        <div class="plan-data">
-                            <input id="question5" name="question" type="radio" class="with-font" value="sel" />
-                            <label for="question5">12 Month</label>
-                            <span class="plan-price term-price">$348 / mo</span>
-                        </div>
-                    </div>
-                    <div class="plan-selection">
-                        <div class="plan-data">
-                            <input id="question6" name="question" type="radio" class="with-font" value="sel" />
-                            <label for="question6">24 Month</label>
-                            <span class="plan-price term-price">$696 / mo</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <h3 class="box-title">Secure your site</h3>
-                    <div class="plan-selection">
-                        <div class="plan-data">
-                            <input id="box1" type="checkbox" class="with-font" />
-                            <label for="box1">Add malware scan and removal</label>
-                            <p class="plan-text">Nam sodales exviverra pretium erat ifermeoin accumsan ligula duiin ornare tortor euismod nece.</p>
-                            <span class="plan-price secure-price">$229 / mo</span>
-                        </div>
-                    </div>
-                    <div class="plan-selection">
-                        <div class="plan-data">
-                            <input id="box2" type="checkbox" class="with-font" />
-                            <label for="box2">Add standard SSL Certificate</label>
-                            <p class="plan-text">Class aptent taciti sociosqu ad litora torquent perconu bia nostrper inceptos himenelquet dui.</p>
-                            <span class="plan-price secure-price">$429 / mo</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="btn btn-primary btn-lg mb30">Continue With Plans</a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-
-                <div class="widget">
-                    <h4 class="widget-title">Order Summary</h4>
-                    <div class="summary-block">
-                        <div class="summary-content">
-                            <div class="summary-head"><h5 class="summary-title">Personal</h5></div>
-                            <div class="summary-price">
-                                <p class="summary-text">$29 / mo</p>
-                                <span class="summary-small-text pull-right">1 month</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="summary-block">
-                        <div class="summary-content">
-                            <div class="summary-head"> <h5 class="summary-title">Website Security
-                                    Essential</h5></div>
-                            <div class="summary-price">
-                                <p class="summary-text">$229 / mo</p>
-                                <span class="summary-small-text pull-right">1 month</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="summary-block">
-                        <div class="summary-content">
-                            <div class="summary-head"> <h5 class="summary-title">Total</h5></div>
-                            <div class="summary-price">
-                                <p class="summary-text">$258 / mo</p>
-                                <span class="summary-small-text pull-right">1 month</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    <Checkout />
 @endsection
